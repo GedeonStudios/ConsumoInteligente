@@ -1,19 +1,18 @@
 @font-face {
     font-family: Cocogoose Regular;
-    src: url(/assets/fonts/cocogoose-pro.regular.ttf);
+    src: url('./fonts/cocogoose-pro.regular.ttf');
 }
 
 @font-face {
     font-family: Cocogoose Semilight;
-    src: url(/assets/fonts/cocogoose-pro.semilight.ttf);
+    src: url('./fonts/cocogoose-pro.semilight.ttf');
 }
 
 
 @font-face {
     font-family: Tirto Writter Regular;
-    src: url(/assets/fonts/TirtoWritterRegular-Eajrl.ttf);
+    src: url('./fonts/TirtoWritterRegular-Eajrl.ttf');
 }
-
 * {
     margin: 0;
     padding: 0;
