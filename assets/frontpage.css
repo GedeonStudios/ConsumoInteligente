@@ -115,7 +115,8 @@ a.login {
     display: none;
     width: 100%;
     height: 100vh;
-    background: #063e8e;
+    background: center center linear-gradient(45deg,#063e8e 15%,#063e8e2c 100%),url(./content/intro.gif);
+    background-repeat: no-repeat;
     opacity: 0;
 }
 
