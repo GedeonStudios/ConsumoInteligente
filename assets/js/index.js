@@ -69,6 +69,7 @@ function GaspAnimtionLoad(scroll, istouch) {
     elements.createCoins.classList.add("InAnim");
 
     if (isHeightThan(999) && isScrollThan(1000)) {
+      console.log(scroll.y, '+900');
       elements.createFooter.classList.add("fadeAnim");
       elements.textsFlex.classList.add("fadeAnim");
 
@@ -82,6 +83,7 @@ function GaspAnimtionLoad(scroll, istouch) {
         }
       }
     } else if (isScrollThan(1050) && isHeightThan(600) && !isHeightThan(700)) {
+      console.log(scroll.y, '-700');
       elements.textsFlex.classList.add("fadeAnim");
       elements.createFooter.classList.add("fadeAnim");
       if (isScrollThan(1600)) {
@@ -95,8 +97,7 @@ function GaspAnimtionLoad(scroll, istouch) {
       }
       
     } else if (isScrollThan(760) && !isHeightThan(900) && isHeightThan(780)) {
-      elements.createFooter.classList.add("fadeAnim");
-      elements.textsFlex.classList.add("fadeAnim");
+      console.log(scroll.y, '+780');
       elements.createFooter.classList.add("fadeAnim");
       elements.textsFlex.classList.add("fadeAnim");
 
@@ -118,6 +119,7 @@ function GaspAnimtionLoad(scroll, istouch) {
         header_menu.classList.remove("black");
       }
     } else if (isScrollThan(1050) && isHeightThan(900) && !isHeightThan(999)) {
+      console.log(scroll.y, '+900');
       elements.textsFlex.classList.add("fadeAnim");
       elements.createFooter.classList.add("fadeAnim");
       if (isScrollThan(1600)) {
