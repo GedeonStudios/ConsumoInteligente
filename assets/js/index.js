@@ -45,17 +45,19 @@ function LoadMianPage(LoadElemt, IntroFrame, ContentElemt) {
 
 function GaspAnimtionLoad(scroll, istouch) {
   const elements = {
-    createText: document.querySelector('.create_text'),
-    createCoins: document.querySelector('.create_coins'),
-    createFooter: document.querySelector('.create_footer'),
-    textsFlex: document.querySelector('.texts_flex'),
-    easyText: document.querySelector('.easy_text_block')
+    createText: document.querySelector(".create_text"),
+    createCoins: document.querySelector(".create_coins"),
+    createFooter: document.querySelector(".create_footer"),
+    textsFlex: document.querySelector(".texts_flex"),
+    easyText: document.querySelector(".easy_text_block"),
   };
 
   const y = scroll.y;
 
   if (istouch) {
-    Object.values(elements).forEach(el => el.classList.add('InAnim', 'fadeAnim'));
+    Object.values(elements).forEach((el) =>
+      el.classList.add("InAnim", "fadeAnim")
+    );
     return;
   }
 
@@ -63,59 +65,72 @@ function GaspAnimtionLoad(scroll, istouch) {
   const isHeightThan = (value) => window.outerHeight > value;
 
   if (isScrollThan(430)) {
-    elements.createText.classList.add('InAnim');
-    elements.createCoins.classList.add('InAnim');
+    elements.createText.classList.add("InAnim");
+    elements.createCoins.classList.add("InAnim");
 
     if (isHeightThan(999) && isScrollThan(1000)) {
-      elements.createFooter.classList.add('fadeAnim');
-      elements.textsFlex.classList.add('fadeAnim');
+      elements.createFooter.classList.add("fadeAnim");
+      elements.textsFlex.classList.add("fadeAnim");
 
       if (isScrollThan(1730)) {
-        elements.easyText.classList.add('fadeAnim');
+        elements.easyText.classList.add("fadeAnim");
 
         if (isScrollThan(3800) && !isScrollThan(4690)) {
-          header_menu.classList.add('black');
+          header_menu.classList.add("black");
         } else {
-          header_menu.classList.remove('black');
+          header_menu.classList.remove("black");
         }
       }
+    } else if (isScrollThan(1050) && isHeightThan(600) && !isHeightThan(700)) {
+      elements.textsFlex.classList.add("fadeAnim");
+      elements.createFooter.classList.add("fadeAnim");
+      if (isScrollThan(1600)) {
+        elements.easyText.classList.add("fadeAnim");
+      }
+      if (isScrollThan(3300) && !isScrollThan(4200)) {
+        console.log(scroll.y);
+        header_menu.classList.add("black");
+      } else {
+        header_menu.classList.remove("black");
+      }
+      
     } else if (isScrollThan(760) && !isHeightThan(900) && isHeightThan(780)) {
-      elements.createFooter.classList.add('fadeAnim');
-      elements.textsFlex.classList.add('fadeAnim');
+      elements.createFooter.classList.add("fadeAnim");
+      elements.textsFlex.classList.add("fadeAnim");
 
       if (isScrollThan(1100)) {
-        elements.easyText.classList.add('fadeAnim');
+        elements.easyText.classList.add("fadeAnim");
 
         if (isScrollThan(2160) && !isScrollThan(2700)) {
-          header_menu.classList.add('black');
+          header_menu.classList.add("black");
         } else {
-          header_menu.classList.remove('black');
+          header_menu.classList.remove("black");
         }
       }
     } else if (isScrollThan(1100) && isHeightThan(700) && !isHeightThan(760)) {
-      elements.easyText.classList.add('fadeAnim');
+      elements.easyText.classList.add("fadeAnim");
 
-      if (isScrollThan(2577) && !isScrollThan(3230)) {
-        header_menu.classList.add('black');
+      if (isScrollThan(2479) && !isScrollThan(3090)) {
+        header_menu.classList.add("black");
       } else {
-        header_menu.classList.remove('black');
+        header_menu.classList.remove("black");
       }
-
     } else if (isScrollThan(1050) && isHeightThan(900) && !isHeightThan(999)) {
-      elements.textsFlex.classList.add('fadeAnim');
-      elements.createFooter.classList.add('fadeAnim');
+      elements.textsFlex.classList.add("fadeAnim");
+      elements.createFooter.classList.add("fadeAnim");
       if (isScrollThan(1600)) {
-        elements.easyText.classList.add('fadeAnim');
+        elements.easyText.classList.add("fadeAnim");
       }
       if (isScrollThan(3300) && !isScrollThan(4200)) {
-        header_menu.classList.add('black');
+        header_menu.classList.add("black");
       } else {
-        header_menu.classList.remove('black');
+        header_menu.classList.remove("black");
       }
-
     }
   } else if (!isScrollThan(130)) {
-    Object.values(elements).forEach(el => el.classList.remove('InAnim', 'fadeAnim'));
+    Object.values(elements).forEach((el) =>
+      el.classList.remove("InAnim", "fadeAnim")
+    );
   }
 }
 
