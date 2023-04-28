@@ -117,6 +117,7 @@ a.login {
     height: 100vh;
     background: center center linear-gradient(45deg,#063e8e 15%,#063e8e2c 100%),url(./content/intro.gif);
     background-repeat: no-repeat;
+    background-position: center center;
     opacity: 0;
 }
 
@@ -487,6 +488,7 @@ a:hover:not(.comunity_join) {
     min-height: 100vh;
     background: center center linear-gradient(45deg,#063e8e 15%,#063e8e2c 100%),url(./content/intro.gif);
     background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .footer_textblock {
