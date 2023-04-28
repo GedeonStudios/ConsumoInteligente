@@ -1,12 +1,9 @@
-import Scrollbar from 'smooth-scrollbar';
-import { ScrollbarPlugin } from 'smooth-scrollbar';
-
 const header_menu = document.querySelector('.header-menu'),
     not_loaded_class = 'not-loaded',
     home = document.getElementById('faq'),
     lde = document.querySelector('.loader'),
     ct = document.querySelector('.page-wrapper');
-var scrollbar
+var scrollbar = window.Scrollbar
 
 function is_touch_enabled() {
     return ('ontouchstart' in window) ||
@@ -14,24 +11,6 @@ function is_touch_enabled() {
         (navigator.msMaxTouchPoints > 0);
 }
 
-class ScaleSpeedPlugin extends ScrollbarPlugin {
-    static pluginName = 'scaleSpeed';
-
-    static defaultOptions = {
-        speed: 1,
-    };
-
-    transformDelta(delta) {
-        const { speed } = this.options;
-
-        return {
-            x: delta.x * speed,
-            y: delta.y * speed,
-        };
-    }
-}
-
-Scrollbar.use(ScaleSpeedPlugin);
 
 function LoadMianPage(LoadElemt, ContentElemt) {
     if (!LoadElemt) {
@@ -60,11 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollbar = Scrollbar.init(home, {
         alwaysShowTracks: true,
         damping: 0.07,
-        plugins: {
-            scaleSpeed: {
-                speed: .95,
-            },
-        },
     });
 
 
