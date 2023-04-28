@@ -688,6 +688,9 @@ n {
 }
 
 
+
+
+
 .IsTouch .container .texts_flex {
     font-size: 4.5vw;
     flex-direction: column;
@@ -729,6 +732,8 @@ n {
 }
 
 .IsTouch .home_comunity .comunity_text_block {
+    position: relative;
+    top: 5vh;
     max-width: 90%;
 }
 
@@ -741,6 +746,8 @@ n {
 }
 
 .IsTouch .home_comunity .comunity_join {
+    position: relative;
+    top: 5vh;
     padding: 10px 20%;
     opacity: 1 !important;
 }
