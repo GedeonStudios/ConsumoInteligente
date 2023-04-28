@@ -1,0 +1,840 @@
+@font-face {
+    font-family: Cocogoose Regular;
+    src: url(/assets/fonts/cocogoose-pro.regular.ttf);
+}
+
+@font-face {
+    font-family: Cocogoose Semilight;
+    src: url(/assets/fonts/cocogoose-pro.semilight.ttf);
+}
+
+
+@font-face {
+    font-family: Tirto Writter Regular;
+    src: url(/assets/fonts/TirtoWritterRegular-Eajrl.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #f6f6f6;
+}
+
+
+.header-menu {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 99;
+    float: left;
+    transition: all .3s;
+}
+
+.page_header .mobile_header , .home_intro .mobile_header {
+    display: none;
+}
+
+.home_intro .home_text a {
+    display: none;
+}
+
+.header-menu span {
+    margin: 60px;
+    margin-top: 35px;
+    font-family: Cocogoose Regular;
+    font-size: 17px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+
+p i,
+p a {
+    color: #1b7aff;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    transition: all .3s
+}
+
+nav {
+    margin: 60px;
+    margin-top: 40px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+}
+
+nav ul li {
+    margin-left: 15px;
+    list-style: none;
+}
+
+nav ul li a {
+    font-family: Cocogoose Semilight;
+    font-size: 13px;
+    transition: .2s all;
+}
+
+a.login {
+    background: #1b7aff;
+    padding: 10px 14px;
+    border-radius: 20px;
+}
+
+.loader {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    background: #1b7aff;
+    transition: all .3s;
+    overflow: hidden;
+}
+
+.loader span {
+    font-family: Cocogoose Regular;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home_intro {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background: #063e8e;
+    opacity: 0;
+}
+
+.home_text {
+    position: absolute;
+    top: 54%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    margin-left: 17%;
+    opacity: 0;
+}
+
+.home_text span {
+    font-family: Cocogoose Regular;
+    font-size: 4.8vw;
+}
+
+.home_text p {
+    font-family: Cocogoose Semilight;
+    margin-top: 2%;
+    width: 80%;
+    font-size: 1vw;
+}
+
+.page-content {
+    display: none;
+}
+
+.home_create {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: #181818;
+    text-align: center;
+}
+
+.create_coins {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.coin1 {
+    position: relative;
+    width: 25%;
+    height: 25%;
+    background: fixed center url('/assets/content/coin2.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 13%;
+    top: 13%;
+    opacity: 0;
+    --r: -15deg
+}
+
+.coin2 {
+    position: relative;
+    width: 25%;
+    height: 25%;
+    background: fixed center url('/assets/content/coin1.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 73%;
+    top: 40%;
+    --r: 15deg;
+    opacity: 0;
+}
+
+.create_coins.InAnim .coin1,
+.create_coins.InAnim .coin2 {
+    animation: 1s textScale cubic-bezier(0.075, 0.82, 0.165, 1.3) .3s forwards;
+}
+
+.create_text_block {
+    display: grid;
+    place-content: center;
+    position: relative;
+    width: 100%;
+    height: 70vh;
+}
+
+.create_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.create_text span {
+    opacity: 0;
+    font-size: 8vw;
+    font-family: Cocogoose Regular;
+    transition: .3s all ease !important;
+    --r: 0deg;
+}
+
+.create_footer {
+    display: grid;
+    place-content: center;
+    position: relative;
+    width: 50%;
+    height: 30%;
+    opacity: 0;
+}
+
+.create_footer p {
+    font-family: Cocogoose Semilight;
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+}
+
+.create_flex {
+    background: #181818;
+    margin: -1px 0px;
+}
+
+.texts_flex {
+    position: relative;
+    place-content: center;
+    align-items: center;
+    display: flex;
+    height: 25vh;
+    width: 100%;
+    gap: 5%;
+    padding: 20px;
+    text-align: left;
+    font-size: 1.4vw;
+    opacity: 0;
+}
+
+.text:first-of-type {
+    margin-left: 5%;
+}
+
+.text:last-of-type {
+    margin-right: 5%;
+}
+
+.text span {
+    font-family: Cocogoose Regular;
+}
+
+.text p {
+    margin-top: 10px;
+    font-family: Cocogoose Semilight;
+    font-size: .8em;
+}
+
+.home_easy {
+    position: relative;
+    display: grid;
+    place-items: end;
+    align-items: center;
+    position: relative;
+    background: #181818;
+    width: 100%;
+    height: 100vh;
+}
+
+.easy_video {
+    position: absolute;
+    width: 50%;
+    height: 70vh;
+    left: 22%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.easy_video video {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.easy_text_block {
+    display: grid;
+    place-content: center;
+    width: 55%;
+    height: 40vh;
+    text-align: left;
+    opacity: 0;
+}
+
+.easy_text_block span {
+    font-family: Cocogoose Regular;
+    font-size: 4.6vw;
+}
+
+.easy_text_block p {
+    font-family: Cocogoose Semilight;
+    font-size: 1.2em;
+}
+
+.home_comunity {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #181818;
+    width: 100%;
+    min-height: 80vh;
+    top: -40vh !important;
+    margin: -1px 0px;
+}
+
+.comunity_text_block {
+    position: relative;
+    max-width: 60%;
+    text-align: center;
+    top: -15vh;
+}
+
+.comunity_text_block span {
+    font-size: 5vw;
+    font-family: Cocogoose Regular;
+}
+
+.comunity_text_block p {
+    font-size: 1.1vw;
+    font-family: Cocogoose Semilight;
+}
+
+.comunity_join {
+    position: relative;
+    top: -15vh;
+    margin-top: 3%;
+    font-size: 2em;
+    font-family: Cocogoose Semilight;
+    background: #1b7aff;
+    border-radius: 40px;
+    padding: 10px 5%;
+    opacity: .7;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.comunity_join:hover {
+    opacity: 1;
+    padding: 10px 8%;
+}
+
+.home_present {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+
+.present_text_block {
+    display: grid;
+    place-content: center;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+}
+
+.present_text {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.present_text a:hover {
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 3px;
+}
+
+.present_text span {
+    font-family: Cocogoose Regular;
+    font-size: 4.5vw;
+    color: #181818;
+    width: 90%;
+}
+
+.present_text p {
+    font-family: Cocogoose Semilight;
+    font-size: 2.3vw;
+    color: #181818;
+}
+
+.present_relej {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    transform: translate(-50%, -50%);
+    min-width: 30%;
+    padding: 2%;
+    background: #f1f1f1;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.present_relej span {
+    font-family: Tirto Writter Regular;
+    font-size: 3vw;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #181818;
+    font-weight: bold;
+    opacity: .5;
+}
+
+
+
+.d,
+.h,
+.m,
+.s {
+    opacity: 1 !important;
+}
+
+.hoverEffect {
+    opacity: .4;
+    transition: .3s all ease;
+}
+
+a:hover:not(.comunity_join) {
+    opacity: .6;
+    transition: all .2s;
+}
+
+.black a:not(.login),
+.black span {
+    color: #181818;
+    transition: .2s all;
+}
+
+.fadeAnim {
+    transition: all .5s ease;
+    opacity: 1;
+}
+
+.InAnim span {
+    animation: 1s textScale cubic-bezier(0.075, 0.82, 0.165, 1.3) var(--d) forwards;
+}
+
+.not-loaded {
+    opacity: 0;
+}
+
+.loaded {
+    opacity: 0;
+    transition: .3s all ease;
+}
+
+.intro {
+    display: block;
+    opacity: 1;
+    animation: 1s IntroFrame cubic-bezier(0.33, 0.4, .3, 1) forwards;
+}
+
+.footer {
+    position: relative;
+    min-height: 100vh;
+    background: #063e8e;
+}
+
+.footer_textblock {
+    position: absolute;
+    top: 44%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    margin-left: 17%;
+}
+
+.footer_textblock span {
+    font-family: Cocogoose Regular;
+    font-size: 3.3vw;
+}
+
+
+.footer_textblock a {
+    font-family: Cocogoose Regular;
+    font-size: 1.3vw;
+}
+
+.copyright {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .6;
+    font-family: Cocogoose Semilight;
+    font-size: .78vw;
+}
+
+@keyframes IntroFrame {
+    0% {
+        transform: scale3d(0.4, 0.4, 0.4);
+        opacity: 0;
+    }
+
+    36% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes textScale {
+    0% {
+        transform: perspective(500px) translate3d(0px, 602px, -600px) rotate(var(--r));
+        opacity: 0;
+    }
+
+    70% {
+        transform: perspective(500px) translate3d(0px, 0px, 0px) rotate(var(--r));
+    }
+
+
+    100% {
+        transform: perspective(500px) translate3d(0px, 0px, 0px) rotate(var(--r));
+        opacity: 1;
+    }
+}
+
+/* ESTE ES DE LA PAGINA FAQS */
+.faq {
+    width: 100%;
+    height: 100vh;
+}
+
+.page_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background: #181818;
+}
+
+.page_header .header_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    text-align: center;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+
+.header_text span {
+    font-size: 6.2vw;
+    font-family: Cocogoose Regular;
+}
+
+.header_text p {
+    margin-top: 20px;
+    font-size: 1.4vw;
+    font-family: Cocogoose Semilight;
+    width: 70%;
+    color: #1b7aff;
+}
+
+.page_faqs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 20vh;
+    background: #181818;
+    margin: -1px 0px;
+}
+
+.page_faqs .faqs:first-of-type {
+    margin-top: 20vh;
+}
+
+.page_faqs .faqs {
+    width: 45%;
+    margin-top: 7vh;
+
+}
+
+.faqs span {
+    font-size: 1.7vw;
+    font-family: Cocogoose Regular;
+}
+
+.faqs p {
+    margin-top: 3.5vh;
+    font-size: 1vw;
+    font-family: Cocogoose Semilight;
+}
+
+.faqs li {
+    margin-top: 3.5vh;
+    font-size: 1vw;
+    font-family: Cocogoose Semilight;
+    margin-left: 5%;
+}
+
+n {
+    font-family: Tirto Writter Regular;
+    font-weight: bold;
+}
+
+
+/* FIN FAQS */
+
+
+
+.IsTouch header .header-menu {
+    display: none;
+}
+
+.IsTouch .home_intro .mobile_header, .IsTouch .page_header .mobile_header{
+    display: flex;
+    position: relative;
+    justify-content: end;
+    width: 100%;
+    z-index: 99;
+    transition: all .3s;
+}
+
+.mobile_header span {
+    position: absolute;
+    margin-top: 35px;
+    font-family: Cocogoose Regular;
+    font-size: 17px;
+    transition: all .3s;
+    cursor: pointer;
+    left: 10%;
+}
+
+.IsTouch .home_intro .mobile_header nav {
+    position: absolute;
+    margin: 40px;
+}
+
+.IsTouch .home_intro .mobile_header nav ul li a {
+    font-size: 3.333vw;
+}
+
+
+.IsTouch .container .texts {
+    width: 90%;
+}
+
+.IsTouch .container .texts span {
+    font-size: 13vw;
+}
+
+.IsTouch .container .texts p {
+    font-size: 4vw;
+}
+
+
+.IsTouch .container .texts_flex {
+    font-size: 4.5vw;
+    flex-direction: column;
+    gap: 10vh;
+    height: max-content;
+    text-align: center;
+}
+
+
+.IsTouch .home_easy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.IsTouch .home_easy .easy_text_block.texts span {
+    font-size: 8.5vw;
+    text-align: center;
+}
+
+.IsTouch .home_easy .easy_text_block.texts p {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.IsTouch .home_easy .easy_video {
+    position: relative;
+    width: 100%;
+    left: 50%;
+    top: 30%;
+}
+
+
+.IsTouch .home_comunity {
+    display: flex;
+    justify-content: center;
+    gap: 4vh 0px;
+}
+
+.IsTouch .home_comunity .comunity_text_block {
+    max-width: 90%;
+}
+
+.IsTouch .home_comunity .comunity_text_block span {
+    font-size: 9vw;
+}
+
+.IsTouch .home_comunity .comunity_text_block p {
+    font-size: 3vw;
+}
+
+.IsTouch .home_comunity .comunity_join {
+    padding: 10px 20%;
+    opacity: 1 !important;
+}
+
+
+.IsTouch .home_present .present_text_block .present_text span {
+    font-size: 9vw;
+}
+
+.IsTouch .home_present .present_text_block .present_text p {
+    margin-top: 3vh;
+    font-size: 4vw;
+}
+
+
+.IsTouch .home_present .present_relej span {
+    font-size: 5vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.IsTouch .home_intro .home_text {
+    top: 65%;
+    left: 55%;
+    width: 90%;
+    margin-left: 0%;
+}
+
+.IsTouch .home_intro .home_text span {
+    font-size: 9vw;
+}
+
+.IsTouch .home_intro .home_text p {
+    font-size: 3.4vw;
+}
+
+.IsTouch .home_intro .home_text a {
+    display: block;
+    position: absolute;
+    font-size: 5vw;
+    width: 90%;
+    top: 120%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    text-align: center;
+    font-family: Cocogoose Regular;
+}
+
+
+.IsTouch .page_faqs.container .texts span {
+    font-size: 5vw;
+}
+
+.IsTouch .page_faqs.container .texts p {
+    font-size: 3vw;
+}
+
+.IsTouch .page_faqs.container .texts ul li {
+    font-size: 3vw;
+}
+
+.IsTouch .page_faqs.container .texts {
+    margin-top: 4vh;
+}
+
+.IsTouch .home_create .create_coins .coin1 {
+    top: 0%;
+    left: 7%;
+    width: 45%;
+}
+
+.IsTouch .home_create .create_coins .coin2 {
+    width: 45%;
+    top: 35%;
+    left: 57%;
+}
+
+.IsTouch .footer .footer_textblock {
+    margin-left: 0;
+    left: 54%;
+    top: 50%;
+    width: 90%;
+}
+
+.IsTouch .footer .footer_textblock a {
+    font-size: 4vw;
+}
+
+.IsTouch .footer .footer_textblock span {
+    font-size: 7vw;
+}
+
+.IsTouch .footer .copyright {
+    font-size: 3vw;
+    text-align: center;
+}
