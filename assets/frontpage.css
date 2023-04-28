@@ -170,7 +170,7 @@ a.login {
     position: relative;
     width: 25%;
     height: 25%;
-    background: fixed center url('/assets/content/coin2.gif');
+    background: fixed center url('./content/coin2.gif');
     background-repeat: no-repeat;
     background-size: contain;
     left: 13%;
@@ -183,7 +183,7 @@ a.login {
     position: relative;
     width: 25%;
     height: 25%;
-    background: fixed center url('/assets/content/coin1.gif');
+    background: fixed center url('./content/coin1.gif');
     background-repeat: no-repeat;
     background-size: contain;
     left: 73%;
